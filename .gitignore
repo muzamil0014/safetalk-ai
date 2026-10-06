@@ -1,41 +1,141 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ============================================================
+# SAFETALK AI
+# GITIGNORE
+# ============================================================
 
-# dependencies
+
+# ============================================================
+# NODE / NEXT.JS
+# ============================================================
+
 /node_modules
 /.pnp
 .pnp.*
+
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
 /.next/
 /out/
-
-# production
 /build
 
-# misc
-.DS_Store
-*.pem
+next-env.d.ts
+*.tsbuildinfo
 
-# debug
+
+# ============================================================
+# TESTING
+# ============================================================
+
+/coverage
+
+
+# ============================================================
+# ENVIRONMENT / SECRETS
+# ============================================================
+
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*
+
+# allow example env file if you create one
+!.env.example
+
+
+# ============================================================
+# VERCEL
+# ============================================================
+
+.vercel/
+
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+ai-backend/venv/
+ai-backend/.venv/
+
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+
+# ============================================================
+# AI DATASETS
+# DO NOT UPLOAD DATASETS TO GITHUB
+# ============================================================
+
+ai-backend/datasets/
+
+*.csv
+*.parquet
+*.xlsx
+*.xls
+
+
+# ============================================================
+# TRAINED AI MODELS
+# DO NOT UPLOAD LARGE MODEL WEIGHTS
+# ============================================================
+
+ai-backend/models/
+
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+
+# ============================================================
+# KAGGLE / NOTEBOOK CACHE
+# ============================================================
+
+.ipynb_checkpoints/
+.cache/
+
+
+# ============================================================
+# TEMP / DOWNLOAD / RECOVERY FILES
+# ============================================================
+
+ai-backend/sentiment-download/
+ai-backend/sentiment-model-download/
+ai-backend/sentiment-recovery/
+
+*.zip
+*.tar
+*.tar.gz
+
+
+# ============================================================
+# LOGS
+# ============================================================
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+*.log
 
-# vercel
-.vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# ============================================================
+# OS / MISC
+# ============================================================
+
+.DS_Store
+Thumbs.db
+
+*.pem
